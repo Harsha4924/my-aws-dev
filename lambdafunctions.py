@@ -4,16 +4,15 @@ import os
 from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-print(BASE_DIR)
+
 dotenv_path = os.path.join(BASE_DIR, '.env')
 load_dotenv(dotenv_path)
-print(dotenv_path)
+
 
 access_key = os.getenv('access_key')
 secret_access_key = os.getenv('secret_access_key')
 
-print(access_key)
-print(secret_access_key)
+
 
 
 def lambda_handler():
@@ -50,7 +49,7 @@ def lambda_handler():
 
 
 
-# lambda_handler()
+lambda_handler()
 
 
 def delete_volume():
@@ -68,4 +67,4 @@ def delete_volume():
             print(f'deleted volume id successfully because volume id - {volume_id} is not connected to any instances')
     
 
-# delete_volume()
+delete_volume()
